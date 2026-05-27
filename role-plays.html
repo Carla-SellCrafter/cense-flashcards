@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Role Plays CENSE — Onboarding CSM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1A0726;
+  --bg-deep: #0F0418;
+  --aubergine: #2D0B3D;
+  --aubergine-2: #3D1450;
+  --pink: #E47AFF;
+  --pink-soft: #F0A8FF;
+  --lime: #D4FF5C;
+  --lime-soft: #E8FF99;
+  --cream: #F5F0E8;
+  --cream-dim: rgba(245, 240, 232, 0.6);
+  --cream-faint: rgba(245, 240, 232, 0.15);
+  --black: #0A0510;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg);
+  color: var(--cream);
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(228, 122, 255, 0.12), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 100%, rgba(212, 255, 92, 0.08), transparent 60%);
+  background-attachment: fixed;
+}
+
+.app {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 48px 32px 80px;
+}
+
+@media (max-width: 640px) {
+  .app { padding: 32px 20px 60px; }
+}
+
+.is-hidden { display: none !important; }
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--cream-faint);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: 'Anton', sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+  text-transform: uppercase;
+}
+
+.brand-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: var(--lime);
+  border-radius: 50%;
+  margin-left: 6px;
+  vertical-align: middle;
+  transform: translateY(-4px);
+}
+
+.header-right { display: flex; align-items: center; gap: 20px; }
+
+.subtitle-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+}
+
+.nav-link {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream);
+  text-decoration: none;
+  border: 1px solid var(--cream-faint);
+  padding: 9px 14px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.nav-link:hover { border-color: var(--pink); color: var(--pink); }
+
+/* Intro */
+.intro { margin-bottom: 44px; max-width: 720px; }
+
+.intro-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 14px;
+}
+
+.intro h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(40px, 6vw, 68px);
+  line-height: 0.94;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.intro h1 .accent { color: var(--lime); }
+
+.intro p {
+  font-size: 16px;
+  color: var(--cream-dim);
+  max-width: 580px;
+  line-height: 1.6;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+}
+.section-label::after { content: ""; flex: 1; height: 1px; background: var(--cream-faint); }
+
+/* Deroulé — numbered steps */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 440px) { .steps { grid-template-columns: 1fr; } }
+
+.step {
+  background: var(--aubergine);
+  border: 1px solid var(--cream-faint);
+  border-radius: 6px;
+  padding: 20px 20px 22px;
+}
+.step-num {
+  font-family: 'Anton', sans-serif;
+  font-size: 22px;
+  color: var(--lime);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.step-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 6px;
+}
+.step-text { font-size: 13px; line-height: 1.5; color: var(--cream-dim); }
+
+/* Buttons */
+.btn {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 14px 22px;
+  border: 1px solid var(--cream-faint);
+  background: transparent;
+  color: var(--cream);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn:hover:not(:disabled) { background: var(--aubergine-2); border-color: var(--cream); }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.btn-lime { background: var(--lime); color: var(--black); border-color: var(--lime); }
+.btn-lime:hover:not(:disabled) { background: var(--lime-soft); border-color: var(--lime-soft); }
+.btn-pink { background: var(--pink); color: var(--black); border-color: var(--pink); }
+.btn-pink:hover:not(:disabled) { background: var(--pink-soft); border-color: var(--pink-soft); }
+.btn-big { font-size: 15px; padding: 18px 38px; }
+
+/* Start state */
+.start-state { text-align: center; padding: 8px 0 12px; }
+.start-hint {
+  margin-top: 16px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--cream-dim);
+}
+
+/* Stage — constrained width so the fiche stays focused */
+.stage { max-width: 600px; margin: 0 auto; }
+
+.stage-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.stage-top .lbl {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+}
+.stage-prog {
+  font-family: 'Anton', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  color: var(--cream-dim);
+}
+.stage-prog b { color: var(--cream); }
+
+/* Public fiche */
+.fiche-public {
+  background: var(--cream);
+  color: var(--black);
+  border-radius: 8px;
+  padding: 26px 30px;
+  position: relative;
+  overflow: hidden;
+}
+.fiche-public::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: var(--lime);
+}
+
+.panel-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+.fiche-public .panel-tag { color: rgba(10, 5, 16, 0.5); }
+
+.fiche-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.fiche-secteur {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(22px, 3.4vw, 32px);
+  line-height: 1.04;
+  text-transform: uppercase;
+  color: var(--black);
+}
+.fiche-secteur .mini {
+  display: block;
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: rgba(10, 5, 16, 0.45);
+  margin-bottom: 6px;
+}
+
+.fiche-role {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(10, 5, 16, 0.1);
+}
+.fiche-role .mini {
+  display: block;
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(10, 5, 16, 0.45);
+  margin-bottom: 4px;
+}
+.fiche-role .role-val {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.plan-badge {
+  font-family: 'Anton', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 7px 15px;
+  border-radius: 3px;
+  color: var(--black);
+  background: var(--lime);
+  white-space: nowrap;
+}
+.plan-badge.plan-pink { background: var(--pink); }
+.plan-badge.plan-violet { background: var(--aubergine); color: var(--cream); }
+
+/* Private gate */
+.fiche-gate {
+  margin-top: 14px;
+  border: 1px dashed var(--pink);
+  border-radius: 8px;
+  padding: 22px 24px;
+  text-align: center;
+  background: rgba(228, 122, 255, 0.05);
+}
+.gate-warn {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+.gate-warn strong { color: var(--pink); }
+
+/* Private brief */
+.fiche-private {
+  margin-top: 14px;
+  background: var(--aubergine);
+  border: 1px solid var(--pink);
+  border-radius: 8px;
+  padding: 24px 28px;
+}
+.fiche-private .panel-tag { color: var(--pink); margin-bottom: 18px; }
+
+.brief-intro {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--cream-dim);
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--cream-faint);
+}
+
+.brief-block { margin-bottom: 18px; }
+.brief-block:last-of-type { margin-bottom: 0; }
+.brief-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+  margin-bottom: 6px;
+}
+.brief-text { font-size: 15px; line-height: 1.5; font-weight: 500; color: var(--cream); }
+
+/* Timer */
+.fiche-timer {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--cream-faint);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.timer-display {
+  font-family: 'Anton', sans-serif;
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: var(--cream);
+  min-width: 96px;
+}
+.fiche-timer.running .timer-display { color: var(--lime); }
+.fiche-timer.done .timer-display { color: var(--pink); }
+.timer-side { flex: 1; min-width: 180px; }
+.timer-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+  margin-bottom: 10px;
+}
+.fiche-timer.done .timer-label { color: var(--pink); }
+.timer-btn-sm { font-size: 12px; padding: 11px 18px; }
+
+/* Stage controls */
+.stage-controls { margin-top: 20px; display: flex; justify-content: center; }
+
+/* Footer */
+.footer {
+  margin-top: 72px;
+  padding-top: 28px;
+  border-top: 1px solid var(--cream-faint);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--cream-dim);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer a { color: var(--cream-dim); text-decoration: none; }
+.footer a:hover { color: var(--pink); }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeUp 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <header class="header">
+    <div class="brand">CENSE<span class="brand-dot"></span></div>
+    <div class="header-right">
+      <a class="nav-link" href="index.html">&larr; Flashcards</a>
+      <div class="subtitle-tag">Onboarding CSM · Role Plays</div>
+    </div>
+  </header>
+
+  <div class="intro">
+    <div class="intro-eyebrow">Entraînement en binôme</div>
+    <h1>Role <span class="accent">Plays.</span></h1>
+    <p>Un client, un CSM, une fiche tirée au hasard. Le client annonce son rôle, son secteur et son offre. Sa situation et ce qu'il doit faire passer restent sur son écran, pour lui seul.</p>
+  </div>
+
+  <!-- THE FLOW -->
+  <div class="section-label">Le déroulé</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-title">Répartissez les rôles</div>
+      <div class="step-text">Décidez qui joue le client et qui joue le CSM.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-title">Le client tire une fiche</div>
+      <div class="step-text">Depuis son écran, il clique sur « Démarrer un role play ».</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-title">Annonce, puis préparation</div>
+      <div class="step-text">Le client annonce au CSM son rôle, son offre et les infos à transmettre. Le CSM se prépare 2 min pendant que le client lit son brief en privé.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-title">Go</div>
+      <div class="step-text">Lancez le role play.</div>
+    </div>
+  </div>
+
+  <!-- START -->
+  <div id="startState" class="start-state">
+    <button class="btn btn-lime btn-big" onclick="drawScenario()">Démarrer un role play</button>
+    <div class="start-hint">Une fiche au hasard · 9 fiches au total</div>
+  </div>
+
+  <!-- STAGE -->
+  <div id="cardState" class="stage is-hidden">
+
+    <div class="stage-top">
+      <span class="lbl">La fiche</span>
+      <span class="stage-prog">Fiche <b id="progSeen">1</b> / 9</span>
+    </div>
+
+    <!-- PUBLIC -->
+    <div class="fiche-public">
+      <div class="panel-tag">À donner au CSM</div>
+      <div class="fiche-row">
+        <div class="fiche-secteur">
+          <span class="mini">Secteur / entreprise</span>
+          <span id="secteur"></span>
+        </div>
+        <span class="plan-badge" id="planBadge"></span>
+      </div>
+      <div class="fiche-role">
+        <span class="mini">Rôle</span>
+        <span class="role-val" id="role"></span>
+      </div>
+    </div>
+
+    <!-- GATE -->
+    <div id="gate" class="fiche-gate">
+      <div class="gate-warn">
+        <strong>CSM, ne regardez pas l'écran.</strong><br>La suite est le brief privé du client.
+      </div>
+      <button class="btn btn-pink" onclick="revealBrief()">Voir le brief</button>
+    </div>
+
+    <!-- PRIVATE -->
+    <div id="privatePanel" class="fiche-private is-hidden">
+      <div class="panel-tag">Brief privé · client uniquement</div>
+      <p class="brief-intro">Ce que vous savez sur votre situation. À vous de décider ce que vous partagez ou non avec le CSM.</p>
+
+      <div class="brief-block">
+        <div class="brief-label">Situation</div>
+        <div class="brief-text" id="contexte"></div>
+      </div>
+      <div class="brief-block">
+        <div class="brief-label">À jouer</div>
+        <div class="brief-text" id="contrainte"></div>
+      </div>
+
+      <div class="fiche-timer" id="timer">
+        <div class="timer-display" id="timerDisplay">2:00</div>
+        <div class="timer-side">
+          <div class="timer-label" id="timerLabel">2 minutes de préparation</div>
+          <button class="btn btn-lime timer-btn-sm" id="timerBtn" onclick="startTimer()">Lancer les 2 min</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-controls">
+      <button class="btn" onclick="drawScenario()">Nouveau role play</button>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div>CENSE · Onboarding CSM</div>
+    <div><a href="index.html">Flashcards</a> · Programme COGEP · mai 2026</div>
+  </footer>
+
+</div>
+
+<script>
+const SCENARIOS = [
+  { role: "Gérante", secteur: "Cabinet de kiné · 4 thérapeutes", plan: "Avancé",
+    contexte: "Les 4 thérapeutes facturent chacun de leur côté, elle veut tout centraliser. Organisée et pressée.",
+    contrainte: "Elle annonce d'entrée qu'elle n'a que 15 minutes, et le rappelle pendant l'échange." },
+  { role: "Gérant", secteur: "Food truck · seul", plan: "Essentiel",
+    contexte: "Toujours en mouvement, il gère son administratif le soir sur son téléphone. Sympa, parle vite.",
+    contrainte: "Il pose une question piège : « Si je change de banque dans 6 mois, je perds tout mon historique ? »" },
+  { role: "Gérant de la SCI", secteur: "SCI familiale · 3 immeubles", plan: "Essentiel",
+    contexte: "Peu de factures par mois. Peu à l'aise avec l'informatique.",
+    contrainte: "Il pose des questions très basiques et a besoin qu'on reformule simplement, sans jargon." },
+  { role: "Gérante", secteur: "Institut de beauté · 2 esthéticiennes", plan: "Avancé",
+    contexte: "Vend aussi des produits cosmétiques, donc un peu de stock à gérer. S'est déjà fait pirater par le passé.",
+    contrainte: "Elle est très réticente à connecter sa banque : la sécurité l'inquiète." },
+  { role: "Plombier indépendant", secteur: "Plomberie", plan: "Avancé",
+    contexte: "Beaucoup de petites interventions et de dépannages, avec quelques impayés réguliers. Bosse seul, pragmatique.",
+    contrainte: "Il appelle depuis une intervention, sur son téléphone, dans un environnement bruyant : peu disponible." },
+  { role: "Propriétaire bailleresse", secteur: "Location meublée · 4 LMNP", plan: "Essentiel",
+    contexte: "À la retraite, c'est son fils qui l'a poussée à prendre CENSE. Débutante totale en informatique.",
+    contrainte: "Elle objecte : « J'ai lu sur Google que je ne suis pas concernée par la réforme. »" },
+  { role: "Artisan électricien", secteur: "Électricité · bientôt 2 salariés", plan: "Essentiel",
+    contexte: "En croissance : il embauche un apprenti et sa femme reprend la compta. Énergique et optimiste.",
+    contrainte: "Il demande : « Comment j'ajoute des accès pour ma femme et l'apprenti ? »" },
+  { role: "Gérant", secteur: "Magasin de vélo · vente au détail", plan: "Essentiel",
+    contexte: "Commerce de détail avec beaucoup de fournisseurs. Suit ses factures de près, plutôt tatillon.",
+    contrainte: "Il ne comprend pas pourquoi certaines factures fournisseurs arrivent par email au lieu d'apparaître dans CENSE." },
+  { role: "Directeur général", secteur: "PME · 25 salariés", plan: "Pilotage",
+    contexte: "Gros volumes de factures et déjà plusieurs outils de gestion en place. Exigeant, va droit au but.",
+    contrainte: "Il demande : « Je peux gérer les bulletins de paie dans CENSE ? »" }
+];
+
+// Pool of indices not yet drawn — avoids repeats until all 10 are seen.
+let pool = [];
+let seenCount = 0;
+let current = null;
+let timerInterval = null;
+
+function planClass(plan) {
+  if (plan.indexOf("Pilotage") !== -1) return "plan-violet";
+  if (plan.indexOf("Avancé") !== -1) return "plan-pink";
+  return ""; // Essentiel -> lime (default)
+}
+
+function drawScenario() {
+  if (pool.length === 0) {
+    pool = SCENARIOS.map((_, i) => i);
+    if (current !== null && pool.length > 1) pool = pool.filter(i => i !== current);
+  }
+
+  const pick = Math.floor(Math.random() * pool.length);
+  current = pool[pick];
+  pool.splice(pick, 1);
+  seenCount++;
+
+  const s = SCENARIOS[current];
+
+  // Public part
+  document.getElementById('role').textContent = s.role;
+  document.getElementById('secteur').textContent = s.secteur;
+  const badge = document.getElementById('planBadge');
+  badge.textContent = s.plan;
+  badge.className = 'plan-badge ' + planClass(s.plan);
+  document.getElementById('progSeen').textContent = Math.min(seenCount, SCENARIOS.length);
+
+  // Private part
+  document.getElementById('contexte').textContent = s.contexte;
+  document.getElementById('contrainte').textContent = s.contrainte;
+
+  // Reset gate / brief / timer
+  resetTimer();
+  document.getElementById('privatePanel').classList.add('is-hidden');
+  document.getElementById('gate').classList.remove('is-hidden');
+
+  // Reveal stage
+  document.getElementById('startState').classList.add('is-hidden');
+  const stage = document.getElementById('cardState');
+  stage.classList.remove('is-hidden', 'fade-in');
+  void stage.offsetWidth;
+  stage.classList.add('fade-in');
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function revealBrief() {
+  document.getElementById('gate').classList.add('is-hidden');
+  const panel = document.getElementById('privatePanel');
+  panel.classList.remove('is-hidden');
+  panel.classList.add('fade-in');
+  panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function fmt(sec) {
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  return m + ':' + String(s).padStart(2, '0');
+}
+
+function startTimer() {
+  clearInterval(timerInterval);
+  let remaining = 120;
+  const timer = document.getElementById('timer');
+  const display = document.getElementById('timerDisplay');
+  const label = document.getElementById('timerLabel');
+  const btn = document.getElementById('timerBtn');
+
+  timer.classList.remove('done');
+  timer.classList.add('running');
+  btn.disabled = true;
+  label.textContent = 'Préparation en cours…';
+  display.textContent = fmt(remaining);
+
+  timerInterval = setInterval(() => {
+    remaining--;
+    display.textContent = fmt(remaining);
+    if (remaining <= 0) {
+      clearInterval(timerInterval);
+      timer.classList.remove('running');
+      timer.classList.add('done');
+      display.textContent = '0:00';
+      label.textContent = "C'est parti, lancez le role play.";
+      btn.disabled = false;
+      btn.textContent = 'Relancer 2 min';
+    }
+  }, 1000);
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  const timer = document.getElementById('timer');
+  timer.classList.remove('running', 'done');
+  document.getElementById('timerDisplay').textContent = '2:00';
+  document.getElementById('timerLabel').textContent = '2 minutes de préparation';
+  const btn = document.getElementById('timerBtn');
+  btn.disabled = false;
+  btn.textContent = 'Lancer les 2 min';
+}
+</script>
+</body>
+</html>
